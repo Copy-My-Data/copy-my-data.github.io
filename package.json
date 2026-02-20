@@ -4,11 +4,14 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "fetch:icon": "node scripts/fetch-app-icon.mjs",
+    "fetch:ratings": "node scripts/fetch-appstore-ratings.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.17.1"
+    "astro": "^5.17.1",
+    "bootstrap": "^5.3.8"
   }
 }

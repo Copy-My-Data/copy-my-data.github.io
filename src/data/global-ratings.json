@@ -1,0 +1,211 @@
+{
+  "appId": "6748068771",
+  "generatedAt": "2026-02-20T14:37:33.899Z",
+  "storefrontCount": 249,
+  "count": 149,
+  "average": 4.6443,
+  "storefrontsWithRatings": [
+    {
+      "code": "us",
+      "rating": 4.58333,
+      "ratingCount": 36
+    },
+    {
+      "code": "cn",
+      "rating": 4.88571,
+      "ratingCount": 35
+    },
+    {
+      "code": "eg",
+      "rating": 4.55556,
+      "ratingCount": 18
+    },
+    {
+      "code": "tw",
+      "rating": 4.75,
+      "ratingCount": 16
+    },
+    {
+      "code": "sg",
+      "rating": 4.66667,
+      "ratingCount": 6
+    },
+    {
+      "code": "de",
+      "rating": 4,
+      "ratingCount": 5
+    },
+    {
+      "code": "ae",
+      "rating": 4.75,
+      "ratingCount": 4
+    },
+    {
+      "code": "mx",
+      "rating": 5,
+      "ratingCount": 4
+    },
+    {
+      "code": "sa",
+      "rating": 4,
+      "ratingCount": 4
+    },
+    {
+      "code": "gb",
+      "rating": 3.66667,
+      "ratingCount": 3
+    },
+    {
+      "code": "hk",
+      "rating": 5,
+      "ratingCount": 2
+    },
+    {
+      "code": "mo",
+      "rating": 5,
+      "ratingCount": 2
+    },
+    {
+      "code": "tr",
+      "rating": 3,
+      "ratingCount": 2
+    },
+    {
+      "code": "bz",
+      "rating": 4,
+      "ratingCount": 1
+    },
+    {
+      "code": "ca",
+      "rating": 5,
+      "ratingCount": 1
+    },
+    {
+      "code": "cd",
+      "rating": 5,
+      "ratingCount": 1
+    },
+    {
+      "code": "ch",
+      "rating": 5,
+      "ratingCount": 1
+    },
+    {
+      "code": "co",
+      "rating": 5,
+      "ratingCount": 1
+    },
+    {
+      "code": "cr",
+      "rating": 5,
+      "ratingCount": 1
+    },
+    {
+      "code": "es",
+      "rating": 5,
+      "ratingCount": 1
+    },
+    {
+      "code": "gr",
+      "rating": 5,
+      "ratingCount": 1
+    },
+    {
+      "code": "iq",
+      "rating": 4,
+      "ratingCount": 1
+    },
+    {
+      "code": "mm",
+      "rating": 5,
+      "ratingCount": 1
+    },
+    {
+      "code": "qa",
+      "rating": 5,
+      "ratingCount": 1
+    },
+    {
+      "code": "vn",
+      "rating": 5,
+      "ratingCount": 1
+    }
+  ],
+  "storefrontsWithoutResults": [
+    "ad",
+    "aq",
+    "as",
+    "aw",
+    "ax",
+    "bd",
+    "bi",
+    "bl",
+    "bq",
+    "bv",
+    "cc",
+    "cf",
+    "ck",
+    "cu",
+    "cw",
+    "cx",
+    "dj",
+    "eh",
+    "er",
+    "et",
+    "fk",
+    "fo",
+    "gf",
+    "gg",
+    "gi",
+    "gl",
+    "gn",
+    "gp",
+    "gq",
+    "gs",
+    "gu",
+    "hm",
+    "ht",
+    "im",
+    "io",
+    "ir",
+    "je",
+    "ki",
+    "km",
+    "kp",
+    "li",
+    "ls",
+    "mc",
+    "mf",
+    "mh",
+    "mp",
+    "mq",
+    "nc",
+    "nf",
+    "nu",
+    "pf",
+    "pm",
+    "pn",
+    "pr",
+    "ps",
+    "re",
+    "sd",
+    "sh",
+    "sj",
+    "sm",
+    "so",
+    "ss",
+    "sx",
+    "sy",
+    "tf",
+    "tg",
+    "tk",
+    "tl",
+    "tv",
+    "um",
+    "va",
+    "vi",
+    "wf",
+    "ws",
+    "yt"
+  ]
+}

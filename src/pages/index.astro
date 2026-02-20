@@ -1,17 +1,130 @@
 ---
+import "../styles/main.css";
+import globalRatings from "../data/global-ratings.json";
 
+const appId = "6748068771";
+const country = "us";
+const lookupUrl = `https://itunes.apple.com/lookup?id=${appId}&country=${country}`;
+
+let appData = {
+	name: "Copy My Data",
+	icon: "",
+	rating: null,
+	ratingCount: null,
+	appStoreUrl: "https://apps.apple.com/us/app/copy-my-data-smart-switch/id6748068771",
+};
+try {
+	const lookupRes = await fetch(lookupUrl);
+	const lookupJson = await lookupRes.json();
+	const app = lookupJson?.results?.[0];
+
+	appData = {
+		name: app?.trackName ?? appData.name,
+		icon: app?.artworkUrl512 ?? app?.artworkUrl100 ?? "",
+		rating: app?.averageUserRating ?? null,
+		ratingCount: app?.userRatingCount ?? null,
+		appStoreUrl: app?.trackViewUrl ?? appData.appStoreUrl,
+	};
+} catch (error) {
+	console.warn("Failed to load App Store data", error);
+}
+
+const iconUrl = "/app-icon.png";
+const siteUrl = "https://copymydata.app";
+const description = "Copy My Data helps you transfer contacts, photos, and files between phones quickly and securely.";
+const schema = {
+	"@context": "https://schema.org",
+	"@type": "SoftwareApplication",
+	name: appData.name,
+	publisher: {
+		"@type": "Organization",
+		name: "Ion Postolachi",
+	},
+	operatingSystem: "iOS",
+	applicationCategory: "UtilitiesApplication",
+	officialWebsite: siteUrl,
+	image: `${siteUrl}${iconUrl}`,
+	url: siteUrl,
+	installUrl: appData.appStoreUrl,
+};
+
+if (globalRatings.count && globalRatings.average) {
+	schema.aggregateRating = {
+		"@type": "AggregateRating",
+		ratingValue: Number(globalRatings.average.toFixed(2)),
+		ratingCount: globalRatings.count,
+	};
+}
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" href={iconUrl} sizes="32x32" />
+		<link rel="icon" href={iconUrl} sizes="16x16" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{appData.name}</title>
+		<link rel="canonical" href={siteUrl} />
+		<meta name="description" content={description} />
+		<meta property="og:title" content={appData.name} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={iconUrl} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={appData.name} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={iconUrl} />
+		<script type="application/ld+json">{JSON.stringify(schema)}</script>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-light">
+		<main class="container min-vh-100 d-flex align-items-center justify-content-center py-5">
+			<section class="text-center">
+					<img
+						src={iconUrl}
+						alt={`${appData.name} app icon`}
+						width="192"
+						height="192"
+						class="shadow-sm mb-3 rounded-main"
+					/>
+				<h1 class="display-6 fw-semibold mb-4">{appData.name}</h1>
+								<a href={appData.appStoreUrl} target="_blank" rel="noreferrer">
+					<img
+						src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+						alt="Download on the App Store"
+						width="200"
+						height="60"
+					/>
+				</a>
+
+								<p class="text-muted mt-4 mb-1">
+					{globalRatings.count ? `${globalRatings.count.toLocaleString()} ratings` : ""}
+				
+				</p>
+				<p class="text-muted mb-1 fw-bold fs-4">
+					{globalRatings.average ? globalRatings.average.toFixed(1) : "No ratings yet"}
+				</p>
+								<div class="rating-stars gap-1" aria-hidden="true">
+					<svg viewBox="0 0 24 24" role="img" focusable="false">
+						<path d="M12 2.5l2.86 5.79 6.39.93-4.63 4.51 1.09 6.36L12 17.77 6.29 20.09l1.09-6.36L2.75 9.22l6.39-.93L12 2.5z" />
+					</svg>
+					<svg viewBox="0 0 24 24" role="img" focusable="false">
+						<path d="M12 2.5l2.86 5.79 6.39.93-4.63 4.51 1.09 6.36L12 17.77 6.29 20.09l1.09-6.36L2.75 9.22l6.39-.93L12 2.5z" />
+					</svg>
+					<svg viewBox="0 0 24 24" role="img" focusable="false">
+						<path d="M12 2.5l2.86 5.79 6.39.93-4.63 4.51 1.09 6.36L12 17.77 6.29 20.09l1.09-6.36L2.75 9.22l6.39-.93L12 2.5z" />
+					</svg>
+					<svg viewBox="0 0 24 24" role="img" focusable="false">
+						<path d="M12 2.5l2.86 5.79 6.39.93-4.63 4.51 1.09 6.36L12 17.77 6.29 20.09l1.09-6.36L2.75 9.22l6.39-.93L12 2.5z" />
+					</svg>
+					<svg viewBox="0 0 24 24" role="img" focusable="false">
+						<path d="M12 2.5l2.86 5.79 6.39.93-4.63 4.51 1.09 6.36L12 17.77 6.29 20.09l1.09-6.36L2.75 9.22l6.39-.93L12 2.5z" />
+					</svg>
+				</div>
+			</section>
+		</main>
+		<script type="module">
+			import "bootstrap/dist/js/bootstrap.bundle.min.js";
+		</script>
 	</body>
 </html>
