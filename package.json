@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "ship": "git add . && git commit -m \"Update site\" && git push",
     "fetch:icon": "node scripts/fetch-app-icon.mjs",
     "fetch:ratings": "node scripts/fetch-appstore-ratings.mjs",
     "build": "astro build",
