@@ -130,15 +130,13 @@ if (globalRatings.count && globalRatings.average) {
 						height="60"
 					/>
 				</a>
-
-								<p class="text-muted mt-4 mb-1">
+				<p class="text-muted mt-4 mb-1">
 					{globalRatings.count ? `${globalRatings.count.toLocaleString()} ratings` : ""}
-				
 				</p>
-				<p class="text-muted mb-1 fw-bold fs-4">
-					{globalRatings.average ? globalRatings.average.toFixed(1) : "No ratings yet"}
+				<p class="mb-1 fw-bold fs-3">
+					{globalRatings.average ? globalRatings.average.toFixed(1) : "No ratings yet"}<span class="score-label fw-normal">out of 5</span>
 				</p>
-								<div class="rating-stars gap-1" aria-hidden="true">
+				<div class="rating-stars gap-1" aria-hidden="true">
 					<svg viewBox="0 0 24 24" role="img" focusable="false">
 						<path d="M12 2.5l2.86 5.79 6.39.93-4.63 4.51 1.09 6.36L12 17.77 6.29 20.09l1.09-6.36L2.75 9.22l6.39-.93L12 2.5z" />
 					</svg>

@@ -1,9 +1,9 @@
 {
   "appId": "6748068771",
-  "generatedAt": "2026-02-20T14:37:33.899Z",
+  "generatedAt": "2026-02-23T10:04:58.613Z",
   "storefrontCount": 249,
-  "count": 149,
-  "average": 4.6443,
+  "count": 148,
+  "average": 4.6689,
   "storefrontsWithRatings": [
     {
       "code": "us",
@@ -66,11 +66,6 @@
       "ratingCount": 2
     },
     {
-      "code": "tr",
-      "rating": 3,
-      "ratingCount": 2
-    },
-    {
       "code": "bz",
       "rating": 4,
       "ratingCount": 1
@@ -122,6 +117,11 @@
     },
     {
       "code": "qa",
+      "rating": 5,
+      "ratingCount": 1
+    },
+    {
+      "code": "tr",
       "rating": 5,
       "ratingCount": 1
     },
