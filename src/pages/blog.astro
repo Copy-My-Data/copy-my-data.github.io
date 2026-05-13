@@ -1,0 +1,184 @@
+---
+import "../styles/main.css";
+import Footer from "../components/Footer.astro";
+
+const siteUrl = "https://copymydata.app";
+const pageTitle = "Blog - Copy My Data";
+const pageDescription = "Read our latest articles about mobile data transfer, app tips, and technology updates for Copy My Data.";
+
+const blogPosts = [
+	{
+		id: "easy-data-transfer",
+		title: "How to Easily Transfer Your Data Between Phones",
+		excerpt: "Learn the fastest and safest way to move all your contacts, photos, and files from your old phone to your new one.",
+		author: "Copy My Data Team",
+		date: "May 10, 2026",
+		dateISO: "2026-05-10",
+		category: "Tips",
+		readTime: "5 min read",
+		image: "/blog/easy-data-transfer.jpg",
+		slug: "easy-data-transfer"
+	},
+	{
+		id: "security-best-practices",
+		title: "Data Security Best Practices for Mobile Users",
+		excerpt: "Protect your personal information while transferring data with our comprehensive guide to mobile security.",
+		author: "Security Team",
+		date: "May 3, 2026",
+		dateISO: "2026-05-03",
+		category: "Security",
+		readTime: "7 min read",
+		image: "/blog/security-best-practices.jpg",
+		slug: "security-best-practices"
+	},
+	{
+		id: "switching-to-iphone",
+		title: "Complete Guide to Switching to iPhone",
+		excerpt: "Everything you need to know when moving from Android to iOS, including what transfers automatically and what requires manual setup.",
+		author: "Product Team",
+		date: "April 28, 2026",
+		dateISO: "2026-04-28",
+		category: "Guides",
+		readTime: "8 min read",
+		image: "/blog/switching-to-iphone.jpg",
+		slug: "switching-to-iphone"
+	}
+];
+
+const schema = {
+	"@context": "https://schema.org",
+	"@type": "Blog",
+	name: pageTitle,
+	url: `${siteUrl}/blog`,
+	description: pageDescription,
+	publisher: {
+		"@type": "Organization",
+		name: "Copy My Data",
+		url: siteUrl,
+		logo: `${siteUrl}/app-icon.png`
+	},
+	blogPosts: blogPosts.map(post => ({
+		"@type": "BlogPosting",
+		headline: post.title,
+		description: post.excerpt,
+		datePublished: post.dateISO,
+		author: {
+			"@type": "Person",
+			name: post.author
+		},
+		image: `${siteUrl}${post.image}`,
+		url: `${siteUrl}/blog/${post.slug}`
+	}))
+};
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/app-icon.png" sizes="32x32" />
+		<link rel="icon" href="/app-icon.png" sizes="16x16" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Primary Meta Tags -->
+		<title>{pageTitle}</title>
+		<meta name="description" content={pageDescription} />
+		<link rel="canonical" href={`${siteUrl}/blog`} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={`${siteUrl}/blog`} />
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={pageDescription} />
+		<meta property="og:image" content="/app-icon.png" />
+		<meta property="og:site_name" content="Copy My Data" />
+		
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={`${siteUrl}/blog`} />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={pageDescription} />
+		<meta name="twitter:image" content="/app-icon.png" />
+		
+		<!-- Additional SEO -->
+		<meta name="keywords" content="mobile tips, data transfer guide, iPhone, Android, technology blog" />
+		<meta name="author" content="Copy My Data" />
+		<meta name="robots" content="index, follow" />
+		<meta name="language" content="English" />
+		
+		<!-- Structured Data -->
+		<script type="application/ld+json">{JSON.stringify(schema)}</script>
+	</head>
+	<body class="bg-light">
+		<nav class="navbar navbar-light bg-light border-bottom">
+			<div class="container">
+				<a href="/" class="navbar-brand fw-bold">Copy My Data</a>
+			</div>
+		</nav>
+
+		<main class="container py-5">
+			<div class="blog-wrapper">
+				<div class="blog-header mb-5">
+					<h1 class="display-4 fw-bold mb-3">Blog</h1>
+					<p class="lead text-muted">
+						Discover tips, guides, and insights about mobile data transfer, app features, and technology trends.
+					</p>
+				</div>
+
+				<div class="blog-grid">
+					{blogPosts.map((post) => (
+						<article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+							<div class="blog-card-image">
+								<img 
+									src={post.image} 
+									alt={post.title}
+									class="img-fluid"
+									loading="lazy"
+								/>
+								<span class="blog-category">{post.category}</span>
+							</div>
+							
+							<div class="blog-card-content">
+								<h2 class="blog-card-title" itemprop="headline">
+									<a href={`/blog/${post.slug}`} class="blog-card-link">
+										{post.title}
+									</a>
+								</h2>
+
+								<p class="blog-card-excerpt" itemprop="description">
+									{post.excerpt}
+								</p>
+
+								<div class="blog-card-meta">
+									<div class="blog-meta-left">
+										<span class="blog-author" itemprop="author">{post.author}</span>
+										<span class="blog-separator">•</span>
+										<time 
+											class="blog-date" 
+											itemprop="datePublished"
+											datetime={post.dateISO}
+										>
+											{post.date}
+										</time>
+									</div>
+									<span class="blog-read-time">{post.readTime}</span>
+								</div>
+
+								<a href={`/blog/${post.slug}`} class="blog-read-more">
+									Read More →
+								</a>
+							</div>
+						</article>
+					))}
+				</div>
+			</div>
+		</main>
+
+		<Footer />
+
+		<script type="module">
+			import "bootstrap/dist/js/bootstrap.bundle.min.js";
+		</script>
+	</body>
+</html>

@@ -1,0 +1,241 @@
+---
+import "../styles/main.css";
+import Footer from "../components/Footer.astro";
+
+const siteUrl = "https://copymydata.app";
+const pageTitle = "Contact Us - Copy My Data";
+const pageDescription = "Get in touch with Copy My Data. We're here to help with questions about our app, support requests, or partnership inquiries.";
+
+const schema = {
+	"@context": "https://schema.org",
+	"@type": "ContactPage",
+	name: pageTitle,
+	url: `${siteUrl}/contact`,
+	description: pageDescription,
+	publisher: {
+		"@type": "Organization",
+		name: "Copy My Data",
+		url: siteUrl,
+		logo: `${siteUrl}/app-icon.png`,
+		contactPoint: {
+			"@type": "ContactPoint",
+			contactType: "Customer Support",
+			email: "support@copymydata.app",
+			availableLanguage: "en"
+		}
+	}
+};
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/app-icon.png" sizes="32x32" />
+		<link rel="icon" href="/app-icon.png" sizes="16x16" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Primary Meta Tags -->
+		<title>{pageTitle}</title>
+		<meta name="description" content={pageDescription} />
+		<link rel="canonical" href={`${siteUrl}/contact`} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={`${siteUrl}/contact`} />
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={pageDescription} />
+		<meta property="og:image" content="/app-icon.png" />
+		<meta property="og:site_name" content="Copy My Data" />
+		
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={`${siteUrl}/contact`} />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={pageDescription} />
+		<meta name="twitter:image" content="/app-icon.png" />
+		
+		<!-- Additional SEO -->
+		<meta name="keywords" content="contact Copy My Data, customer support, app help" />
+		<meta name="author" content="Copy My Data" />
+		<meta name="robots" content="index, follow" />
+		<meta name="language" content="English" />
+		
+		<!-- Structured Data -->
+		<script type="application/ld+json">{JSON.stringify(schema)}</script>
+	</head>
+	<body class="bg-light">
+		<nav class="navbar navbar-light bg-light border-bottom">
+			<div class="container">
+				<a href="/" class="navbar-brand fw-bold">Copy My Data</a>
+			</div>
+		</nav>
+
+		<main class="container py-5">
+			<div class="contact-wrapper">
+				<div class="contact-header mb-5">
+					<h1 class="display-5 fw-bold mb-3">Get in Touch</h1>
+					<p class="lead text-muted">
+						Have questions or feedback about Copy My Data? We'd love to hear from you. Reach out using the contact information below or fill out the form.
+					</p>
+				</div>
+
+				<div class="row g-4">
+					<!-- Contact Form -->
+					<div class="col-lg-8">
+						<div class="contact-form-card">
+							<h2 class="h3 mb-4">Send us a Message</h2>
+							<form id="contact-form" class="contact-form">
+								<div class="mb-3">
+									<label for="name" class="form-label">Full Name *</label>
+									<input 
+										type="text" 
+										class="form-control" 
+										id="name" 
+										name="name"
+										placeholder="Your name"
+										required
+										aria-required="true"
+									/>
+								</div>
+
+								<div class="mb-3">
+									<label for="email" class="form-label">Email Address *</label>
+									<input 
+										type="email" 
+										class="form-control" 
+										id="email" 
+										name="email"
+										placeholder="your@email.com"
+										required
+										aria-required="true"
+									/>
+								</div>
+
+								<div class="mb-3">
+									<label for="subject" class="form-label">Subject *</label>
+									<select 
+										class="form-select" 
+										id="subject" 
+										name="subject"
+										required
+										aria-required="true"
+									>
+										<option value="">Select a subject</option>
+										<option value="support">Technical Support</option>
+										<option value="feedback">Feedback</option>
+										<option value="partnership">Partnership Inquiry</option>
+										<option value="bug">Report a Bug</option>
+										<option value="other">Other</option>
+									</select>
+								</div>
+
+								<div class="mb-3">
+									<label for="message" class="form-label">Message *</label>
+									<textarea 
+										class="form-control" 
+										id="message" 
+										name="message"
+										rows="5"
+										placeholder="Tell us what's on your mind..."
+										required
+										aria-required="true"
+									></textarea>
+								</div>
+
+								<button 
+									type="submit" 
+									class="btn btn-primary btn-lg"
+									aria-label="Send message"
+								>
+									Send Message
+								</button>
+								<p class="text-muted small mt-3">We typically respond within 24 hours.</p>
+							</form>
+						</div>
+					</div>
+
+					<!-- Contact Information -->
+					<div class="col-lg-4">
+						<div class="contact-info-card">
+							<h2 class="h3 mb-4">Contact Information</h2>
+
+							<div class="contact-method mb-4">
+								<h3 class="h5 fw-bold mb-2">Email</h3>
+								<p class="mb-0">
+									<a href="mailto:support@ios2web.com" class="contact-link">
+										support@ios2web.com
+									</a>
+								</p>
+								<p class="small text-muted mt-1">For general inquiries and support</p>
+							</div>
+
+							<div class="contact-method mb-4">
+								<h3 class="h5 fw-bold mb-2">Privacy & Legal</h3>
+								<p class="mb-0">
+									<a href="mailto:support@ios2web.com" class="contact-link">
+										support@ios2web.com
+									</a>
+								</p>
+								<p class="small text-muted mt-1">For privacy and legal matters</p>
+							</div>
+
+							<div class="contact-method mb-4">
+								<h3 class="h5 fw-bold mb-2">Partnerships</h3>
+								<p class="mb-0">
+									<a href="mailto:support@ios2web.com" class="contact-link">
+										support@ios2web.com
+									</a>
+								</p>
+								<p class="small text-muted mt-1">For business partnerships</p>
+							</div>
+
+							<hr class="my-4" />
+
+							<div class="contact-method">
+								<h3 class="h5 fw-bold mb-2">Follow Us</h3>
+								<div class="contact-socials">
+									<a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="contact-social-link" title="Twitter">
+										<svg viewBox="0 0 24 24" role="img" focusable="false">
+											<path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+									</a>
+									<a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="contact-social-link" title="Facebook">
+										<svg viewBox="0 0 24 24" role="img" focusable="false">
+											<path d="M18 2h-3a6 6 0 00-6 6v3H7v4h2v8h4v-8h3l1-4h-4V8a2 2 0 012-2h3z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+									</a>
+									<a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="contact-social-link" title="Instagram">
+										<svg viewBox="0 0 24 24" role="img" focusable="false">
+											<rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke="currentColor" stroke-width="2" fill="none"/>
+											<path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+											<circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+										</svg>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<Footer />
+
+		<script type="module">
+			import "bootstrap/dist/js/bootstrap.bundle.min.js";
+			
+			const form = document.getElementById('contact-form');
+			if (form) {
+				form.addEventListener('submit', (e) => {
+					e.preventDefault();
+					// In a real application, you would send this data to a backend service
+					// For now, show a success message
+					alert('Thank you for your message! We will get back to you soon.');
+					form.reset();
+				});
+			}
+		</script>
+	</body>
+</html>

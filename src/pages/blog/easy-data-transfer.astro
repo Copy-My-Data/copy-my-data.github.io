@@ -1,0 +1,241 @@
+---
+import "../../styles/main.css";
+import Footer from "../../components/Footer.astro";
+
+const siteUrl = "https://copymydata.app";
+
+const post = {
+	title: "How to Easily Transfer Your Data Between Phones",
+	author: "Copy My Data Team",
+	date: "May 10, 2026",
+	dateISO: "2026-05-10",
+	readTime: "5 min read",
+	category: "Tips",
+	description: "Learn the fastest and safest way to move all your contacts, photos, and files from your old phone to your new one.",
+	image: "/blog/easy-data-transfer.jpg",
+	slug: "easy-data-transfer"
+};
+
+const schema = {
+	"@context": "https://schema.org",
+	"@type": "BlogPosting",
+	headline: post.title,
+	description: post.description,
+	image: `${siteUrl}${post.image}`,
+	datePublished: post.dateISO,
+	author: {
+		"@type": "Person",
+		name: post.author
+	},
+	publisher: {
+		"@type": "Organization",
+		name: "Copy My Data",
+		url: siteUrl,
+		logo: `${siteUrl}/app-icon.png`
+	},
+	mainEntityOfPage: {
+		"@type": "WebPage",
+		"@id": `${siteUrl}/blog/${post.slug}`
+	}
+};
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/app-icon.png" sizes="32x32" />
+		<link rel="icon" href="/app-icon.png" sizes="16x16" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Primary Meta Tags -->
+		<title>{post.title} - Copy My Data Blog</title>
+		<meta name="description" content={post.description} />
+		<link rel="canonical" href={`${siteUrl}/blog/${post.slug}`} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content={`${siteUrl}/blog/${post.slug}`} />
+		<meta property="og:title" content={post.title} />
+		<meta property="og:description" content={post.description} />
+		<meta property="og:image" content={`${siteUrl}${post.image}`} />
+		<meta property="og:site_name" content="Copy My Data" />
+		<meta property="article:published_time" content={post.dateISO} />
+		<meta property="article:author" content={post.author} />
+		
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={`${siteUrl}/blog/${post.slug}`} />
+		<meta name="twitter:title" content={post.title} />
+		<meta name="twitter:description" content={post.description} />
+		<meta name="twitter:image" content={`${siteUrl}${post.image}`} />
+		
+		<!-- Additional SEO -->
+		<meta name="keywords" content="mobile data transfer, iPhone tips, Android tips, phone setup" />
+		<meta name="author" content={post.author} />
+		<meta name="robots" content="index, follow" />
+		<meta name="language" content="English" />
+		
+		<!-- Structured Data -->
+		<script type="application/ld+json">{JSON.stringify(schema)}</script>
+	</head>
+	<body class="bg-light">
+		<nav class="navbar navbar-light bg-light border-bottom">
+			<div class="container">
+				<a href="/" class="navbar-brand fw-bold">Copy My Data</a>
+			</div>
+		</nav>
+
+		<main class="container py-5">
+			<article class="blog-post-wrapper" itemscope itemtype="https://schema.org/BlogPosting">
+				<header class="blog-post-header mb-4">
+					<div class="blog-post-meta-top">
+						<span class="blog-post-category">{post.category}</span>
+						<time 
+							class="blog-post-date" 
+							itemprop="datePublished"
+							datetime={post.dateISO}
+						>
+							{post.date}
+						</time>
+					</div>
+
+					<h1 class="blog-post-title" itemprop="headline">{post.title}</h1>
+
+					<p class="blog-post-description lead" itemprop="description">
+						{post.description}
+					</p>
+
+					<div class="blog-post-meta-bottom">
+						<div class="blog-post-author">
+							<span class="fw-600">By</span>
+							<span itemprop="author" class="fw-bold">{post.author}</span>
+						</div>
+						<span class="blog-post-read-time">{post.readTime}</span>
+					</div>
+				</header>
+
+				<div class="blog-post-image mb-4">
+					<img 
+						src={post.image} 
+						alt={post.title}
+						class="img-fluid"
+						itemprop="image"
+						width="800"
+						height="400"
+					/>
+				</div>
+
+				<div class="blog-post-content" itemprop="articleBody">
+					<h2>Getting Started</h2>
+					<p>
+						Transferring data between phones doesn't have to be complicated or time-consuming. Whether you're upgrading to a new device or switching platforms, Copy My Data makes the process fast, easy, and secure. In this guide, we'll walk you through everything you need to know.
+					</p>
+
+					<h2>Before You Begin</h2>
+					<p>
+						Make sure both of your phones are charged and connected to a stable Wi-Fi network. Here are a few things to prepare:
+					</p>
+					<ul>
+						<li>Update both phones to the latest iOS version</li>
+						<li>Back up important data to cloud storage</li>
+						<li>Have both phones available for the transfer process</li>
+						<li>Clear some storage space on your new phone</li>
+					</ul>
+
+					<h2>Step-by-Step Instructions</h2>
+					<p>
+						Follow these simple steps to transfer your data:
+					</p>
+					<ol>
+						<li><strong>Download the App:</strong> Install Copy My Data on both your old and new phones from the App Store.</li>
+						<li><strong>Launch the App:</strong> Open Copy My Data on both devices simultaneously.</li>
+						<li><strong>Select Source Phone:</strong> On your old phone, select "I'm the old phone" to mark it as the source.</li>
+						<li><strong>Select Destination Phone:</strong> On your new phone, select "I'm the new phone" to mark it as the destination.</li>
+						<li><strong>Choose What to Transfer:</strong> Select which data you want to move - contacts, photos, files, or all of the above.</li>
+						<li><strong>Start Transfer:</strong> Press the transfer button and wait for the process to complete.</li>
+					</ol>
+
+					<h2>What Gets Transferred</h2>
+					<p>
+						Copy My Data can transfer:
+					</p>
+					<ul>
+						<li><strong>Contacts:</strong> All your phone contacts with names, numbers, and email addresses</li>
+						<li><strong>Photos:</strong> Full resolution photos and videos from your camera roll</li>
+						<li><strong>Files:</strong> Documents, PDFs, and other important files</li>
+						<li><strong>Messages:</strong> SMS and iMessage conversations (where supported)</li>
+					</ul>
+
+					<h2>Tips for Success</h2>
+					<p>
+						To ensure the smoothest transfer experience:
+					</p>
+					<ul>
+						<li>Keep both phones connected to Wi-Fi throughout the entire process</li>
+						<li>Don't use other apps while the transfer is in progress</li>
+						<li>Have sufficient storage available on your new phone</li>
+						<li>If the transfer is interrupted, you can resume it without losing progress</li>
+					</ul>
+
+					<h2>Troubleshooting</h2>
+					<p>
+						If you encounter any issues during the transfer:
+					</p>
+					<ul>
+						<li><strong>Connection Issues:</strong> Make sure both phones are on the same Wi-Fi network</li>
+						<li><strong>Storage Full:</strong> Delete unnecessary files to free up space on your new phone</li>
+						<li><strong>Transfer Stuck:</strong> Restart both apps and try again</li>
+						<li><strong>Still Having Problems:</strong> <a href="/contact">Contact our support team</a> for assistance</li>
+					</ul>
+
+					<h2>Conclusion</h2>
+					<p>
+						Transferring your data has never been easier. With Copy My Data, you can move everything you need from your old phone to your new one in just minutes. No complicated setup, no data loss, just simple and secure data transfer.
+					</p>
+					<p>
+						Ready to get started? <a href="https://apps.apple.com/us/app/copy-my-data-smart-switch/id6748068771?uo=4" target="_blank" rel="noopener noreferrer">Download Copy My Data today</a> and experience the easiest data transfer on the App Store.
+					</p>
+				</div>
+
+				<footer class="blog-post-footer mt-5 pt-4 border-top">
+					<div class="blog-post-footer-content">
+						<div class="blog-post-author-bio">
+							<h3>About the Author</h3>
+							<p>
+								The Copy My Data Team is dedicated to making data transfer simple, fast, and secure. With years of experience in mobile technology, we're here to help you get the most out of your devices.
+							</p>
+						</div>
+						<div class="blog-post-share mt-4">
+							<h3>Share This Article</h3>
+							<div class="blog-share-buttons">
+								<a href={`https://twitter.com/intent/tweet?url=${siteUrl}/blog/${post.slug}&text=${encodeURIComponent(post.title)}`} target="_blank" rel="noopener noreferrer" class="share-btn twitter" title="Share on Twitter">
+									<span>Twitter</span>
+								</a>
+								<a href={`https://www.facebook.com/sharer/sharer.php?u=${siteUrl}/blog/${post.slug}`} target="_blank" rel="noopener noreferrer" class="share-btn facebook" title="Share on Facebook">
+									<span>Facebook</span>
+								</a>
+								<a href={`https://www.linkedin.com/sharing/share-offsite/?url=${siteUrl}/blog/${post.slug}`} target="_blank" rel="noopener noreferrer" class="share-btn linkedin" title="Share on LinkedIn">
+									<span>LinkedIn</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</footer>
+			</article>
+
+			<nav class="blog-navigation mt-5 pt-4 border-top" aria-label="Blog Navigation">
+				<div class="blog-nav-links">
+					<a href="/blog" class="btn btn-outline-primary">← Back to Blog</a>
+				</div>
+			</nav>
+		</main>
+
+		<Footer />
+
+		<script type="module">
+			import "bootstrap/dist/js/bootstrap.bundle.min.js";
+		</script>
+	</body>
+</html>

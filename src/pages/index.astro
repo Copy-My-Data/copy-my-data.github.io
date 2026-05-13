@@ -1,5 +1,6 @@
 ---
 import "../styles/main.css";
+import Footer from "../components/Footer.astro";
 import globalRatings from "../data/global-ratings.json";
 
 const appId = "6748068771";
@@ -228,6 +229,7 @@ if (globalRatings.count && globalRatings.average) {
 				</div>
 			</div>
 		</section>
+		<Footer />
 		<script type="module">
 			import "bootstrap/dist/js/bootstrap.bundle.min.js";
 		</script>

@@ -1,0 +1,126 @@
+---
+import "../styles/main.css";
+import Footer from "../components/Footer.astro";
+
+const siteUrl = "https://copymydata.app";
+const description = "I respect your privacy. This Privacy Policy explains how the Copy My Data app handles your information. This app is available exclusively on iOS.";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/app-icon.png" sizes="32x32" />
+		<link rel="icon" href="/app-icon.png" sizes="16x16" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Privacy Policy - Copy My Data</title>
+		<link rel="canonical" href={`${siteUrl}/privacy`} />
+		<meta name="description" content={description} />
+		<meta property="og:title" content="Privacy Policy - Copy My Data" />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="/app-icon.png" />
+	</head>
+	<body class="bg-light">
+		<nav class="navbar navbar-light bg-light border-bottom">
+			<div class="container">
+				<a href="/" class="navbar-brand fw-bold">Copy My Data</a>
+			</div>
+		</nav>
+
+		<main class="container py-5">
+			<article class="max-width-800">
+				<h1 class="mb-4">Privacy Policy</h1>
+				<p class="text-muted">Last updated: May 2026</p>
+
+				<section class="mb-5">
+					<p class="lead">
+						Hi! I'm the developer of <strong>Copy My Data</strong>, and I take your privacy seriously. This document explains how my app works and what data (if any) it handles. Spoiler: almost nothing leaves your device.
+					</p>
+				</section>
+
+				<section class="mb-5">
+					<h2>1. I Don't Collect Any Data</h2>
+					<p>
+						I built <strong>Copy My Data</strong> to work entirely on your iPhone or iPad — no data is collected, stored, or transmitted by me. Everything happens locally on your device or between devices on your home network. I don't track anything, I don't know what you transfer, and I don't want to.
+					</p>
+				</section>
+
+				<section class="mb-5">
+					<h2>2. No Third‑Party Services</h2>
+					<p>
+						This app doesn't use any third-party SDKs, analytics tools, or external servers. There's no Firebase, no advertising, and no background data collection. What happens in your home network stays in your home network.
+					</p>
+				</section>
+
+				<section class="mb-5">
+					<h2>3. Why I Ask for Permissions</h2>
+					<p>
+						To make the app work properly, I ask for access to the following:
+					</p>
+					<ul>
+						<li><strong>Photos</strong> – so you can choose photos and videos to transfer</li>
+						<li><strong>Contacts</strong> – to help you move your contact list to another device</li>
+						<li><strong>Calendar</strong> – if you want to transfer calendar events</li>
+						<li><strong>Location</strong> – only to detect nearby devices on your Wi-Fi (Apple requires this for local discovery)</li>
+						<li><strong>Local Network</strong> – to connect with other devices for transfer</li>
+					</ul>
+					<p>
+						These permissions are used <strong>only</strong> for their intended purpose. The app does not access or transmit any of this data beyond your devices.
+					</p>
+				</section>
+
+				<section class="mb-5">
+					<h2>4. Local Transfers Only</h2>
+					<p>
+						All file transfers happen directly between devices connected to the same Wi-Fi network. Nothing is uploaded to the internet or sent to a server. The app doesn't use the cloud, and your data stays in your control at all times.
+					</p>
+				</section>
+
+				<section class="mb-5">
+					<h2>5. No Account Needed</h2>
+					<p>
+						You don't need to sign up, log in, or create an account to use <strong>Copy My Data</strong>. Just install the app, connect to the same network, and start transferring. It's that simple.
+					</p>
+				</section>
+
+				<section class="mb-5">
+					<h2>6. In-App Purchases and Subscriptions</h2>
+					<p>
+						Some features in the app can be unlocked through in-app purchases, including subscriptions. All purchases are handled securely by <strong>Apple</strong> through the App Store.
+					</p>
+					<p>
+						I do <strong>not</strong> collect or process any personal or payment information.<br />
+						You can manage or cancel your subscriptions at any time through your <strong>Apple ID settings</strong>.
+					</p>
+				</section>
+
+				<section class="mb-5">
+					<h2>7. About Kids</h2>
+					<p>
+						This app isn't designed for children, but since I don't collect or store any data, there's nothing identifiable being handled — for anyone.
+					</p>
+				</section>
+
+				<section class="mb-5">
+					<h2>8. Contact Me</h2>
+					<p>
+						If you have questions, concerns, or just want to say hi, feel free to reach out:
+					</p>
+					<p>
+						<strong>Email:</strong> <a href="mailto:support@ios2web.com">support@ios2web.com</a>
+					</p>
+					<p class="mt-3">
+						Thanks for using <strong>Copy My Data</strong>!
+					</p>
+				</section>
+			</article>
+		</main>
+
+		<Footer />
+
+		<script type="module">
+			import "bootstrap/dist/js/bootstrap.bundle.min.js";
+		</script>
+	</body>
+</html>
