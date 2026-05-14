@@ -892,7 +892,7 @@ article .text-muted {
 .blog-post-header {
 	margin-bottom: 2rem;
 	padding-bottom: 2rem;
-	border-bottom: 2px solid #e1e1e1;
+	border-bottom: 1px solid #e1e1e1;
 }
 
 .blog-post-meta-top {

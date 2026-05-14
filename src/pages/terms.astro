@@ -4,6 +4,20 @@ import Footer from "../components/Footer.astro";
 
 const siteUrl = "https://copymydata.app";
 const description = "Terms of Service for Copy My Data app";
+const pageUrl = `${siteUrl}/terms/`;
+const pageTitle = "Terms of Service - Copy My Data";
+const schema = {
+	"@context": "https://schema.org",
+	"@type": "TermsOfService",
+	name: pageTitle,
+	url: pageUrl,
+	description,
+	publisher: {
+		"@type": "Organization",
+		name: "Copy My Data",
+		url: siteUrl,
+	},
+};
 ---
 
 <html lang="en">
@@ -14,12 +28,20 @@ const description = "Terms of Service for Copy My Data app";
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Terms of Service - Copy My Data</title>
-		<link rel="canonical" href={`${siteUrl}/terms`} />
+		<title>{pageTitle}</title>
+		<link rel="canonical" href={pageUrl} />
 		<meta name="description" content={description} />
-		<meta property="og:title" content="Terms of Service - Copy My Data" />
+		<meta name="robots" content="index, follow" />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content={pageUrl} />
+		<meta property="og:title" content={pageTitle} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content="/app-icon.png" />
+		<meta property="og:image" content={`${siteUrl}/app-icon.png`} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={`${siteUrl}/app-icon.png`} />
+		<script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
 	</head>
 	<body class="bg-light">
 		<nav class="navbar navbar-light bg-light border-bottom">

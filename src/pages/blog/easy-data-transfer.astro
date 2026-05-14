@@ -12,7 +12,7 @@ const post = {
 	readTime: "5 min read",
 	category: "Tips",
 	description: "Learn the fastest and safest way to move all your contacts, photos, and files from your old phone to your new one.",
-	image: "/blog/easy-data-transfer.jpg",
+	image: "/blog/easy-data-transfer.png",
 	slug: "easy-data-transfer"
 };
 
@@ -35,7 +35,7 @@ const schema = {
 	},
 	mainEntityOfPage: {
 		"@type": "WebPage",
-		"@id": `${siteUrl}/blog/${post.slug}`
+		"@id": `${siteUrl}/blog/${post.slug}/`
 	}
 };
 ---
@@ -52,11 +52,11 @@ const schema = {
 		<!-- Primary Meta Tags -->
 		<title>{post.title} - Copy My Data Blog</title>
 		<meta name="description" content={post.description} />
-		<link rel="canonical" href={`${siteUrl}/blog/${post.slug}`} />
+		<link rel="canonical" href={`${siteUrl}/blog/${post.slug}/`} />
 		
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="article" />
-		<meta property="og:url" content={`${siteUrl}/blog/${post.slug}`} />
+		<meta property="og:url" content={`${siteUrl}/blog/${post.slug}/`} />
 		<meta property="og:title" content={post.title} />
 		<meta property="og:description" content={post.description} />
 		<meta property="og:image" content={`${siteUrl}${post.image}`} />
@@ -66,7 +66,7 @@ const schema = {
 		
 		<!-- Twitter -->
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:url" content={`${siteUrl}/blog/${post.slug}`} />
+		<meta name="twitter:url" content={`${siteUrl}/blog/${post.slug}/`} />
 		<meta name="twitter:title" content={post.title} />
 		<meta name="twitter:description" content={post.description} />
 		<meta name="twitter:image" content={`${siteUrl}${post.image}`} />
@@ -78,7 +78,7 @@ const schema = {
 		<meta name="language" content="English" />
 		
 		<!-- Structured Data -->
-		<script type="application/ld+json">{JSON.stringify(schema)}</script>
+		<script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
 	</head>
 	<body class="bg-light">
 		<nav class="navbar navbar-light bg-light border-bottom">
@@ -187,7 +187,7 @@ const schema = {
 						<li><strong>Connection Issues:</strong> Make sure both phones are on the same Wi-Fi network</li>
 						<li><strong>Storage Full:</strong> Delete unnecessary files to free up space on your new phone</li>
 						<li><strong>Transfer Stuck:</strong> Restart both apps and try again</li>
-						<li><strong>Still Having Problems:</strong> <a href="/contact">Contact our support team</a> for assistance</li>
+						<li><strong>Still Having Problems:</strong> <a href="/contact/">Contact our support team</a> for assistance</li>
 					</ul>
 
 					<h2>Conclusion</h2>
@@ -210,13 +210,13 @@ const schema = {
 						<div class="blog-post-share mt-4">
 							<h3>Share This Article</h3>
 							<div class="blog-share-buttons">
-								<a href={`https://twitter.com/intent/tweet?url=${siteUrl}/blog/${post.slug}&text=${encodeURIComponent(post.title)}`} target="_blank" rel="noopener noreferrer" class="share-btn twitter" title="Share on Twitter">
+								<a href={`https://twitter.com/intent/tweet?url=${siteUrl}/blog/${post.slug}/&text=${encodeURIComponent(post.title)}`} target="_blank" rel="noopener noreferrer" class="share-btn twitter" title="Share on Twitter">
 									<span>Twitter</span>
 								</a>
-								<a href={`https://www.facebook.com/sharer/sharer.php?u=${siteUrl}/blog/${post.slug}`} target="_blank" rel="noopener noreferrer" class="share-btn facebook" title="Share on Facebook">
+								<a href={`https://www.facebook.com/sharer/sharer.php?u=${siteUrl}/blog/${post.slug}/`} target="_blank" rel="noopener noreferrer" class="share-btn facebook" title="Share on Facebook">
 									<span>Facebook</span>
 								</a>
-								<a href={`https://www.linkedin.com/sharing/share-offsite/?url=${siteUrl}/blog/${post.slug}`} target="_blank" rel="noopener noreferrer" class="share-btn linkedin" title="Share on LinkedIn">
+								<a href={`https://www.linkedin.com/sharing/share-offsite/?url=${siteUrl}/blog/${post.slug}/`} target="_blank" rel="noopener noreferrer" class="share-btn linkedin" title="Share on LinkedIn">
 									<span>LinkedIn</span>
 								</a>
 							</div>
@@ -227,7 +227,7 @@ const schema = {
 
 			<nav class="blog-navigation mt-5 pt-4 border-top" aria-label="Blog Navigation">
 				<div class="blog-nav-links">
-					<a href="/blog" class="btn btn-outline-primary">← Back to Blog</a>
+					<a href="/blog/" class="btn btn-outline-primary">← Back to Blog</a>
 				</div>
 			</nav>
 		</main>

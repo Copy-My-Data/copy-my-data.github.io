@@ -32,6 +32,7 @@ try {
 
 const iconUrl = "/app-icon.png";
 const siteUrl = "https://copymydata.app";
+const pageUrl = `${siteUrl}/`;
 const description = "Copy My Data helps you transfer contacts, photos, and files between phones quickly and securely.";
 const overallRating = globalRatings.average ?? appData.rating ?? 0;
 const overallCount = globalRatings.count ?? appData.ratingCount ?? 0;
@@ -79,7 +80,7 @@ const schema = {
 	applicationCategory: "UtilitiesApplication",
 	officialWebsite: siteUrl,
 	image: `${siteUrl}${iconUrl}`,
-	url: siteUrl,
+	url: pageUrl,
 	installUrl: appData.appStoreUrl,
 };
 
@@ -101,16 +102,21 @@ if (globalRatings.count && globalRatings.average) {
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{appData.name}</title>
-		<link rel="canonical" href={siteUrl} />
+		<link rel="canonical" href={pageUrl} />
 		<meta name="description" content={description} />
+		<meta name="robots" content="index, follow" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={pageUrl} />
 		<meta property="og:title" content={appData.name} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content={iconUrl} />
+		<meta property="og:image" content={`${siteUrl}${iconUrl}`} />
+		<meta property="og:site_name" content="Copy My Data" />
 		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={pageUrl} />
 		<meta name="twitter:title" content={appData.name} />
 		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content={iconUrl} />
-		<script type="application/ld+json">{JSON.stringify(schema)}</script>
+		<meta name="twitter:image" content={`${siteUrl}${iconUrl}`} />
+		<script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
 	</head>
 	<body class="bg-light">
 		<main class="container min-vh-100 d-flex align-items-center justify-content-center py-5">

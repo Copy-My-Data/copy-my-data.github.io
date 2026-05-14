@@ -10,7 +10,7 @@ const schema = {
 	"@context": "https://schema.org",
 	"@type": "ContactPage",
 	name: pageTitle,
-	url: `${siteUrl}/contact`,
+	url: `${siteUrl}/contact/`,
 	description: pageDescription,
 	publisher: {
 		"@type": "Organization",
@@ -20,7 +20,7 @@ const schema = {
 		contactPoint: {
 			"@type": "ContactPoint",
 			contactType: "Customer Support",
-			email: "support@copymydata.app",
+			email: "support@ios2web.com",
 			availableLanguage: "en"
 		}
 	}
@@ -39,22 +39,22 @@ const schema = {
 		<!-- Primary Meta Tags -->
 		<title>{pageTitle}</title>
 		<meta name="description" content={pageDescription} />
-		<link rel="canonical" href={`${siteUrl}/contact`} />
+		<link rel="canonical" href={`${siteUrl}/contact/`} />
 		
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content={`${siteUrl}/contact`} />
+		<meta property="og:url" content={`${siteUrl}/contact/`} />
 		<meta property="og:title" content={pageTitle} />
 		<meta property="og:description" content={pageDescription} />
-		<meta property="og:image" content="/app-icon.png" />
+		<meta property="og:image" content={`${siteUrl}/app-icon.png`} />
 		<meta property="og:site_name" content="Copy My Data" />
 		
 		<!-- Twitter -->
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:url" content={`${siteUrl}/contact`} />
+		<meta name="twitter:url" content={`${siteUrl}/contact/`} />
 		<meta name="twitter:title" content={pageTitle} />
 		<meta name="twitter:description" content={pageDescription} />
-		<meta name="twitter:image" content="/app-icon.png" />
+		<meta name="twitter:image" content={`${siteUrl}/app-icon.png`} />
 		
 		<!-- Additional SEO -->
 		<meta name="keywords" content="contact Copy My Data, customer support, app help" />
@@ -63,7 +63,7 @@ const schema = {
 		<meta name="language" content="English" />
 		
 		<!-- Structured Data -->
-		<script type="application/ld+json">{JSON.stringify(schema)}</script>
+		<script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
 	</head>
 	<body class="bg-light">
 		<nav class="navbar navbar-light bg-light border-bottom">
@@ -193,7 +193,7 @@ const schema = {
 
 							<hr class="my-4" />
 
-							<div class="contact-method">
+								<div class="contact-method">
 								<h3 class="h5 fw-bold mb-2">Follow Us</h3>
 								<div class="contact-socials">
 									<a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="contact-social-link" title="Twitter">

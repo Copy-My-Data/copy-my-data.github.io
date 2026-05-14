@@ -16,32 +16,8 @@ const blogPosts = [
 		dateISO: "2026-05-10",
 		category: "Tips",
 		readTime: "5 min read",
-		image: "/blog/easy-data-transfer.jpg",
+		image: "/blog/easy-data-transfer.png",
 		slug: "easy-data-transfer"
-	},
-	{
-		id: "security-best-practices",
-		title: "Data Security Best Practices for Mobile Users",
-		excerpt: "Protect your personal information while transferring data with our comprehensive guide to mobile security.",
-		author: "Security Team",
-		date: "May 3, 2026",
-		dateISO: "2026-05-03",
-		category: "Security",
-		readTime: "7 min read",
-		image: "/blog/security-best-practices.jpg",
-		slug: "security-best-practices"
-	},
-	{
-		id: "switching-to-iphone",
-		title: "Complete Guide to Switching to iPhone",
-		excerpt: "Everything you need to know when moving from Android to iOS, including what transfers automatically and what requires manual setup.",
-		author: "Product Team",
-		date: "April 28, 2026",
-		dateISO: "2026-04-28",
-		category: "Guides",
-		readTime: "8 min read",
-		image: "/blog/switching-to-iphone.jpg",
-		slug: "switching-to-iphone"
 	}
 ];
 
@@ -49,7 +25,7 @@ const schema = {
 	"@context": "https://schema.org",
 	"@type": "Blog",
 	name: pageTitle,
-	url: `${siteUrl}/blog`,
+	url: `${siteUrl}/blog/`,
 	description: pageDescription,
 	publisher: {
 		"@type": "Organization",
@@ -67,7 +43,7 @@ const schema = {
 			name: post.author
 		},
 		image: `${siteUrl}${post.image}`,
-		url: `${siteUrl}/blog/${post.slug}`
+		url: `${siteUrl}/blog/${post.slug}/`
 	}))
 };
 ---
@@ -84,22 +60,22 @@ const schema = {
 		<!-- Primary Meta Tags -->
 		<title>{pageTitle}</title>
 		<meta name="description" content={pageDescription} />
-		<link rel="canonical" href={`${siteUrl}/blog`} />
+		<link rel="canonical" href={`${siteUrl}/blog/`} />
 		
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content={`${siteUrl}/blog`} />
+		<meta property="og:url" content={`${siteUrl}/blog/`} />
 		<meta property="og:title" content={pageTitle} />
 		<meta property="og:description" content={pageDescription} />
-		<meta property="og:image" content="/app-icon.png" />
+		<meta property="og:image" content={`${siteUrl}/app-icon.png`} />
 		<meta property="og:site_name" content="Copy My Data" />
 		
 		<!-- Twitter -->
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:url" content={`${siteUrl}/blog`} />
+		<meta name="twitter:url" content={`${siteUrl}/blog/`} />
 		<meta name="twitter:title" content={pageTitle} />
 		<meta name="twitter:description" content={pageDescription} />
-		<meta name="twitter:image" content="/app-icon.png" />
+		<meta name="twitter:image" content={`${siteUrl}/app-icon.png`} />
 		
 		<!-- Additional SEO -->
 		<meta name="keywords" content="mobile tips, data transfer guide, iPhone, Android, technology blog" />
@@ -108,7 +84,7 @@ const schema = {
 		<meta name="language" content="English" />
 		
 		<!-- Structured Data -->
-		<script type="application/ld+json">{JSON.stringify(schema)}</script>
+		<script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
 	</head>
 	<body class="bg-light">
 		<nav class="navbar navbar-light bg-light border-bottom">
@@ -141,7 +117,7 @@ const schema = {
 							
 							<div class="blog-card-content">
 								<h2 class="blog-card-title" itemprop="headline">
-									<a href={`/blog/${post.slug}`} class="blog-card-link">
+									<a href={`/blog/${post.slug}/`} class="blog-card-link">
 										{post.title}
 									</a>
 								</h2>
@@ -165,7 +141,7 @@ const schema = {
 									<span class="blog-read-time">{post.readTime}</span>
 								</div>
 
-								<a href={`/blog/${post.slug}`} class="blog-read-more">
+								<a href={`/blog/${post.slug}/`} class="blog-read-more">
 									Read More →
 								</a>
 							</div>
