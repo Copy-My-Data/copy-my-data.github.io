@@ -1,14 +1,14 @@
 {
   "appId": "6748068771",
-  "generatedAt": "2026-05-13T11:08:47.376Z",
+  "generatedAt": "2026-07-15T23:11:55.834Z",
   "storefrontCount": 249,
-  "count": 151,
-  "average": 4.6755,
+  "count": 156,
+  "average": 4.6795,
   "storefrontsWithRatings": [
     {
       "code": "us",
-      "rating": 4.59459,
-      "ratingCount": 37
+      "rating": 4.59999,
+      "ratingCount": 40
     },
     {
       "code": "cn",
@@ -106,6 +106,11 @@
       "ratingCount": 1
     },
     {
+      "code": "in",
+      "rating": 5,
+      "ratingCount": 1
+    },
+    {
       "code": "iq",
       "rating": 4,
       "ratingCount": 1
@@ -122,6 +127,11 @@
     },
     {
       "code": "qa",
+      "rating": 5,
+      "ratingCount": 1
+    },
+    {
+      "code": "ro",
       "rating": 5,
       "ratingCount": 1
     },
